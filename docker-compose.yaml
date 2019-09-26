@@ -1,7 +1,20 @@
 version: "3"
 services:
   labs-nginx:
-    container_name: labs_server
+    container_name: labs-server
     image: nginx:latest
+    env_file: .env
     ports:
       - "8005:80"
+    depends_on:
+      - labs-mysql
+  labs-mysql:
+    container_name: labs-mysql
+    image: mysql:latest
+    ports:
+      - "3015:3006"
+    environment:
+        - MYSQL_ROOT_PASSWORD=deusdara
+  labs-redis:
+      container_name: labs-redis
+      image: redis:latest

@@ -218,3 +218,19 @@ $ docker run -d -p 8080:3000 labs-build-4
 ```
 
 * No Browser executar `http://localhost:8080`
+
+
+Para executar o comando de run mandando como parâmetro qual o arquivo que quero executar, ficaria como no seguinte:
+
+```
+$ docker run -d -p 8080:3000 labs-build-4 index2.js
+```
+
+## Docker compose
+
+* Criar um arquivo chamado `docker-compose.yaml` conforme exemplo na raiz.
+* Rodar comando abaixo para rodar o docker compose
+
+```
+$ docker-compose up
+```

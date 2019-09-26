@@ -1,0 +1,7 @@
+version: "3"
+services:
+  labs-nginx:
+    container_name: labs_server
+    image: nginx:latest
+    ports:
+      - "8005:80"

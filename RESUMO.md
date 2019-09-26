@@ -174,7 +174,7 @@ $ docker image build
 ```
 
 ### Criando uma imagem
-* Criar um arquivo `Dockerfile` conforme exemplo presente neste repositório.
+* Criar um arquivo `Dockerfile` conforme exemplo presente neste repositório. (Arquivo: Dockerfile-build1).
 * No comando abaixo ele irá rodar o arquivo de imagem encontrado no caminho descrito por `.` que no casos representa a pasta local.
 
 ```
@@ -185,4 +185,22 @@ Para executar a imagem criada:
 
 ```
 $ docker run -p 8080:80 labs-build-1
+```
+
+### Imagem com env e args
+
+Criar um arquivo `Dockerfile` centos para subir um banco mysql
+
+* Se precisar enviar outro build-arg deve-se repetir o comando --build-arg.
+
+```
+$ docker image build --build-arg AMBIENTE=production -t labs-build-2 .
+```
+
+
+### Copiando arquivos pelo Dockerfile
+
+```
+$ docker image build -t labs-build-3 .
+$ docker container run -it labs-build-3 bash
 ```

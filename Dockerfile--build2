@@ -1,0 +1,8 @@
+FROM centos:latest
+LABEL maintainer="Luizalabs - Bruno Barbosa"
+
+ARG AMBIENTE=homolog
+ARG MYSQL_DB_USERNAME=${MYSQL_DB_USERNAME}
+
+ENV AMBIENTE=${AMBIENTE}
+ENV MYSQL_DB_USERNAME=${MYSQL_DB_USERNAME:-root}

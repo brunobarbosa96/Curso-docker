@@ -1,2 +1,5 @@
-FROM nginx:latest
-RUN echo '<H1>Luizalabs</H1>' > /usr/share/nginx/html/index.html
+FROM centos:latest
+
+LABEL maintainer="Luizalabs - Bruno Barbosa"
+
+COPY *.txt /luizalabs/txts/

@@ -189,7 +189,7 @@ $ docker run -p 8080:80 labs-build-1
 
 ### Imagem com env e args
 
-Criar um arquivo `Dockerfile` centos para subir um banco mysql
+Criar um arquivo `Dockerfile` centos para subir um banco mysql (Arquivo: Dockerfile-build2)
 
 * Se precisar enviar outro build-arg deve-se repetir o comando --build-arg.
 
@@ -200,7 +200,21 @@ $ docker image build --build-arg AMBIENTE=production -t labs-build-2 .
 
 ### Copiando arquivos pelo Dockerfile
 
+* Utilizar o comando COPY para copiar os arquivos local para o container (Dockerfile-build3).
+
 ```
 $ docker image build -t labs-build-3 .
 $ docker container run -it labs-build-3 bash
 ```
+
+### Criando uma imagem do nodejs. (Imagens build4)
+
+* Criar arquivo `index.js` (Exemplo na raiz).
+* Criar arquivo `Dockerfile` (Arquivo: Dockerfile-build4)'
+
+```
+$ docker image build -t labs-build-4 .
+$ docker run -d -p 8080:3000 labs-build-4
+```
+
+* No Browser executar `http://localhost:8080`
